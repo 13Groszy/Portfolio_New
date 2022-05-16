@@ -11,8 +11,8 @@
 </head>
 <body>
     <header>
+        <img src="/assets/logo.png" alt="Logo">
         <nav>
-            <img src="" alt="Logo">
             <div class="nav__wrapper">
                 <a href="">Home</a>
                 <a href="">About</a>
@@ -23,72 +23,97 @@
         </nav>
     </header>
     <main>
-        <section class="hero_image">
-            <div class="hero_image__text">
-                <p>Hi there  👋 I'm</p>
+        <section class="hero">
+            <div class="hero__text">
+                <h3>Hi there <span>👋 </span> I'm</h3>
                 <h1>Mateusz Daszkiewicz</h1>
                 <h2>Junior Frontend Developer</h2>
-                <h3>I'm design minded frond end developer with UI/UX skills</h3>
+                <p>I'm design minded frond end developer with UI/UX skills</p>
                 <button>Hire Me</button>
             </div>
-            <div class="hero_image__img mobile">
+            <div class="hero__image mobile">
+                <!-- Image faded on half face -->
                 <img src="" alt="Hero Image">
             </div>
         </section>
-        <h4>Who I am?</h4>
+        <div class="flex_line">
+            <span class="line"></span>
+            <h3>Who I am?</h3>
+            <span class="line"></span>
+        </div>
         <section class="about">
             <div class="about__image">
                 <!--Outline on the ::before -->
-                <img src="" alt="My photo">
+                <img src="/assets/hero_photo.png" alt="My photo">
             </div>
             <div class="about__text">
                 <h2>About Me</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, autem?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis voluptas ratione odit corporis, totam maiores modi delectus accusamus commodi dolorum.</p>
-
-                <button>Download CV</button>
+                <p>I'm Mateusz, self-taught Junior Front End Developer with UI/UX skills. <br>I'm passionate about continuous development of my stack, challenging problems and expanding experiences.</p>
+                <p>My actual stack is HTML, CSS and JavaScript with few extra libraries and frameworks like SCSS, TailwindCSS, jQuery and Vue.js. <br> I also have some experience with WordPress, Figma and PhotoShop</p>
+                <p>Although I don't have much commercial experience, I allocate most of my free time to achieve it.</p>
+                <a href="" Download>Download CV</a>
             </div>
         </section>
-        <h4>What I do?</h4>
-        <section class="services">
-            <h2>My Services</h2>
-            <!--Services with highlight on ::hover -->
-            <div class="services__wrapper">
-                <div class="services__item">
-                    <img src="" alt="">
-                    <h3>Website Development</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, rerum!</p>
-                </div>
-            </div>
-            <div class="services__wrapper">
-                <div class="services__item">
-                    <img src="" alt="">
-                    <h3>Product Design</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, rerum!</p>
-                </div>
-            </div>
-            <div class="services__wrapper">
-                <div class="services__item">
-                    <img src="" alt="">
-                    <h3>Creating NFT</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, rerum!</p>
-                </div>
-            </div>
-        </section>
-        <h3>What I've done?</h3>
+        <div class="flex_line">
+            <span class="line"></span>
+            <h3>What I've done?</h3>
+            <span class="line"></span>
+        </div>
         <section class="portfolio">
             <!--Content release on ::hover after animation-->
-            <div class="project__wrapper">
-                <div class="project__wrapper__item">
-                    <h3 class="project__wrapper__item__title">Title</h3>
-                    <p class="project__wrapper__item__title">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, nesciunt.</p>
+            <h2>My Portfolio</h2>
+            <div class="project one">
+                <div class="project__item">
+                    <h3>Title</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, nesciunt.</p>
+                    <a href="">View Design</a>
+                    <a href="">See Code</a>
+                </div>
+            </div>
+            <div class="project two">
+                <div class="project__item">
+                    <h3>Title</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, nesciunt.
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, nesciunt.
+                    </p>
                     <a href="">View Design</a>
                     <a href="">See Code</a>
                 </div>
             </div>
         </section>
-        <h3>How do I work?</h3>
+        <div class="flex_line">
+            <span class="line"></span>
+            <h3>What I do?</h3>
+            <span class="line"></span>
+        </div>
+        <section class="services">
+            <h2>My Services</h2>
+            <!--Services with highlight on ::hover -->
+            <div class="services__wrapper">
+                <div class="services__item">
+                    <img src="/assets/logo.png" alt="">
+                    <h3>Website Development</h3>
+                    <p>I use various web technologies to transfer customer ideas to code which conver to responsive websites.</p>
+                </div>
+                <div class="services__item">
+                    <img src="/assets/logo.png" alt="">
+                    <h3>Product Design</h3>
+                    <p>I work with certain tools to create high quality designs which are simple to use and to please the eye.</p>
+                </div>
+                <div class="services__item">
+                    <img src="/assets/logo.png" alt="">
+                    <h3>Creating NFT</h3>
+                    <p>I keep up with the times and created original tool which make unique tokens.</p>
+                </div>
+            </div>
+        </section>
+        <div class="flex_line">
+            <span class="line"></span>
+            <h3>How do I work?</h3>
+            <span class="line"></span>
+        </div>
         <section class="workflow">
+            <!-- Workflow carousel would be nice here -->
             <h2>My Workflow</h2>
             <div class="workflow__wrapper">
                 <div class="workflow__item">
@@ -99,7 +124,11 @@
             </div>
             <!-- Idea, Research, Planning, Designing, Testing, Launch   -->
         </section>
-        <h3>Contact Me</h3>
+        <div class="flex_line">
+            <span class="line"></span>
+            <h3>Contact Me</h3>
+            <span class="line"></span>
+        </div>
         <section class="contact">
             <h2>Get In Touch</h2>
             <p> I am available to work with your projects, give me a shout and I'll get back to you as soon as I can</p>
@@ -113,7 +142,7 @@
     </main>
     <footer>
         <img src="" alt="Logo">
-        <p>© Copyrights 2022. All rights reserved</p>
+        <p>Created by Mateusz Daszkiewicz with HTML, SCSS and JavaScript.</p>
         <div class="socials">
             <!-- Mail, FB, WhatsApp, GitHub, LinkedIn -->
         </div>
