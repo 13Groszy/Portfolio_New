@@ -1,6 +1,8 @@
 $diffColor: salmon;
 $marginTwo: 2rem;
 $sectionBreak: 5rem;
+
+
 @mixin btn{
     background-color: salmon;
     padding: 1rem 3rem;
@@ -238,13 +240,53 @@ body{
             }
         }
         .workflow{
+            h2{
+                margin-bottom: $marginTwo;
+            }
+            &__wrapper{
+                display: flex;
+                flex-direction: column;
+            }
+            &__item{
+                margin: auto;
+                margin-bottom: $marginTwo;
+                width: 75%;
+                text-align: left;
+                border-radius: 0.5rem;
+                box-shadow: 0 1rem 2rem #000;
+                
+                h3, p{
+                    text-align: left;
+                    margin: 1rem;
+                }
+                p{
+                    padding-bottom: 1rem;
+                }
+                i{
+                    padding:1rem 0 0 1rem;
+                }
+            }
     
         }
         .contact{
-    
         }
     }
     footer{
-        
+        margin-bottom: $marginTwo;
+        .socials{
+            display: flex;
+            justify-content: space-around;
+            max-width: 400px;
+            margin:auto;
+
+            i{
+                font-size: 1.5rem;
+                border-color: white;margin-bottom: 1rem;
+            }
+        }
+        img{
+            height: 3rem;
+            margin-bottom: 1rem;
+        }
     }
 }
