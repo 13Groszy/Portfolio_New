@@ -22,7 +22,7 @@ const portfolio = document.querySelector('.portfolio');
 let getprojects = () =>{
     projects.forEach(el =>{
         portfolio.innerHTML += `
-        <div class="project ${el.key}">
+        <div class="project fade-in js-scroll ${el.key}">
                 <div class="project__item">
                     <h3>${el.title}</h3>
                     <p>${el.description}</p>
@@ -35,4 +35,35 @@ let getprojects = () =>{
 getprojects();
 
 
+//Animate on screen
+const scrollElements = document.querySelectorAll(".js-scroll");
 
+scrollElements.forEach((el) => {
+    el.style.opacity = 0
+  })
+
+  const elementInView = (el) => {
+    const elementTop = el.getBoundingClientRect().top;
+   
+    return (
+      elementTop <= (window.innerHeight || document.documentElement.clientHeight)
+    );
+  };
+  const displayScrollElement = (element) => {
+    element.classList.add("scrolled");
+  };
+  const hideScrollElement = (element) => {
+    element.classList.remove("scrolled");
+  };
+  const handleScrollAnimation = () => {
+    scrollElements.forEach((el) => {
+      if (elementInView(el, 100)) {
+        displayScrollElement(el);
+      }else {
+        hideScrollElement(el);
+      }
+    })
+  }
+  window.addEventListener('scroll', () => {
+    handleScrollAnimation();
+  })

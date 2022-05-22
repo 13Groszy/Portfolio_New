@@ -2,6 +2,12 @@ $diffColor: salmon;
 $marginTwo: 2rem;
 $sectionBreak: 5rem;
 
+//@include animation($name, $length, $delay)
+
+@mixin animation($name, $length, $delay) {
+    animation: $name $length ease-out $delay forwards;
+}
+
 @mixin card($image){
     background: $image;
     background-size:contain;
@@ -10,7 +16,7 @@ $sectionBreak: 5rem;
 }
 
 @mixin btn{
-    background-color: salmon;
+    background-color: $diffColor;
     padding: 1rem 3rem;
     border-radius: $marginTwo;
     border: none;
@@ -21,19 +27,55 @@ $sectionBreak: 5rem;
         color:$diffColor;
     }
 }
+@mixin overlays($animation, $delay) {
+        position: fixed;
+        width: 50vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background: $diffColor;
+        z-index: 2;
+        animation: $animation 1s ease-in $delay forwards;
+}
+
 *{
     margin: 0;
     padding:0;
     text-align: center;
     color: white;
 }
-.mobile{
+
+.none{
     display: none;
 }
+
 h2{
     margin-bottom: $marginTwo;
 }
-body{    
+
+.js-scroll {
+    opacity: 0;
+    transition: all 500ms;
+    &.scrolled{
+        opacity: 1;
+
+        &.fade-in{
+            animation: fade-in 1s ease-in-out 0.5s both;
+        }
+        &.fade-in-bottom{
+            animation: fade-in-bottom 1s ease-in-out 0.2s both;
+        }
+        &.slide-left{
+            animation: slide-left 1s ease-in-out 0.2s both;
+        }
+        &.slide-right{
+            animation: slide-right 1s ease-in-out 0.2s both;
+        }
+    }
+}
+
+body{
+    overflow-x: hidden;
     background-color: #222;
     h3{
         color: $diffColor;
@@ -57,7 +99,6 @@ body{
         margin-bottom: $marginTwo;
     }
     header{
-        
         position: fixed;
         background-color: #000;
         width: 100vw;
@@ -69,10 +110,14 @@ body{
         align-items: center;
         img{
             height: 3rem;
+            opacity: 0;
+            @include animation(appear-small, 1s, 1s);
         }
     
         nav{    
             .nav__menu{
+                @include animation(appear-small, 1s, 1s);
+                opacity: 0;
                 transition: all 0.2s ease-in-out;
                 span{
                     display: block;
@@ -150,12 +195,26 @@ body{
                 }
                 h1{
                     font-size: 3rem;
+                    opacity: 0;
+                    @include animation(appear-to-top, 1s, 1.2s)
                 }
                 h2{
                     color: $diffColor;
+                    opacity: 0;
+                    @include animation(appear-to-top, 1s, 1.4s)
                 }
                 button{
                     @include btn;
+                    opacity: 0;
+                    @include animation(appear-to-top, 1s, 1.8s)
+                }
+                h3{
+                    opacity: 0;
+                    @include animation(appear-to-top, 1s, 1s)
+                }
+                p{
+                    opacity: 0;
+                    @include animation(appear-to-top, 1s, 1.6s)
                 }
             }
             &__image{
@@ -409,5 +468,96 @@ body{
             height: 5rem;
             margin-bottom: 1rem;
         }
+    }
+    .page_extras{
+        display: flex;
+        .overlay_one{
+            @include overlays(leave-left, 0.2s)
+        }
+        .overlay_two{
+            @include overlays(leave-right, 0.5s);
+            left:50vw;
+        }
+    }
+}
+
+//keyframes
+@keyframes leave-left{
+    0%{
+        opacity:1;
+    }
+    100%{
+        opacity: 0.5;
+        height: 0;
+        top: 100vh;
+        left: 0;
+}}
+@keyframes leave-right{
+    0%{
+        opacity:1;
+    }
+    100%{
+        opacity: 0.5;
+        height: 0;
+        top: 100vh;
+        left: 50vw;
+}}
+
+@keyframes appear-small {
+    0%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes appear-to-top {
+    0%{
+        transform: translateY(100px);
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+@keyframes slide-left {
+    0% {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+}
+   
+@keyframes slide-right {
+    0% {
+      transform: translateX(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+}   
+@keyframes fade-in-bottom {
+    0% {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}   
+@keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
 }
