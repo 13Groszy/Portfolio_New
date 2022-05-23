@@ -1,8 +1,8 @@
 $diffColor: salmon;
 $marginTwo: 2rem;
 $sectionBreak: 5rem;
-
-//@include animation($name, $length, $delay)
+$tablet: 768px;
+$desktop: 1024px;
 
 @mixin animation($name, $length, $delay) {
     animation: $name $length ease-out $delay forwards;
@@ -44,11 +44,6 @@ $sectionBreak: 5rem;
     text-align: center;
     color: white;
 }
-
-.none{
-    display: none;
-}
-
 h2{
     margin-bottom: $marginTwo;
 }
@@ -108,6 +103,13 @@ body{
         display: flex;
         justify-content: space-around;
         align-items: center;
+        @media (min-width: $tablet) {
+            justify-content: space-evenly;
+        }
+        @media (min-width: $desktop) {
+            justify-content: center;
+            gap: 10rem;
+        }
         img{
             height: 3rem;
             opacity: 0;
@@ -116,6 +118,9 @@ body{
     
         nav{    
             .nav__menu{
+                @media (min-width: $desktop) {
+                    display: none;
+                }
                 @include animation(appear-small, 1s, 1s);
                 opacity: 0;
                 transition: all 0.2s ease-in-out;
@@ -135,7 +140,6 @@ body{
                     transition-delay: 0.4s;
                     transform: rotate(45deg);
 
-                    
                         :nth-child(2){
                             width: 0;
                         }
@@ -163,6 +167,7 @@ body{
                 div{
                     display: flex;
                     flex-direction: column;
+                    align-items: center;
                     justify-content: space-around;
                     min-height: 80%;
 
@@ -177,17 +182,41 @@ body{
                     transition: all 300ms ease-in;
                     transform: translateX(0);
                 }
+                @media (min-width: $desktop) {
+                    position: inherit;
+                    height: 3rem;
+                    width: 500px;
+                    background-color: transparent;
+                    transform: translateX(0);
+
+                    div{
+                        flex-direction: row;
+                        a{
+                            font-size: 1rem;
+                        }
+                    }
+
+                }
             }
         }
     }
     main{
+        max-width: 1440px;
+        margin: auto;
         section{
             margin-bottom: $sectionBreak;
         }
         .hero{
-            min-height: 80vh;
+            min-height: 700px;
             &__text{
-                transform: translateY(30%);
+                transform: translateY(35%);
+
+                @media (min-width: $tablet) {
+                    transform: translateY(55%);
+                }
+                @media (min-width: $tablet) {
+                    transform: translateY(75%);
+                }
                 width: 75%;
                 margin: auto;
                 p,h1,h3{
@@ -196,25 +225,25 @@ body{
                 h1{
                     font-size: 3rem;
                     opacity: 0;
-                    @include animation(appear-to-top, 1s, 1.2s)
+                    @include animation(appear-to-top, 1s, 1.2s);
                 }
                 h2{
                     color: $diffColor;
                     opacity: 0;
-                    @include animation(appear-to-top, 1s, 1.4s)
+                    @include animation(appear-to-top, 1s, 1.4s);
                 }
                 button{
                     @include btn;
                     opacity: 0;
-                    @include animation(appear-to-top, 1s, 1.8s)
+                    @include animation(appear-to-top, 1s, 1.8s);
                 }
                 h3{
                     opacity: 0;
-                    @include animation(appear-to-top, 1s, 1s)
+                    @include animation(appear-to-top, 1s, 1s);
                 }
                 p{
                     opacity: 0;
-                    @include animation(appear-to-top, 1s, 1.6s)
+                    @include animation(appear-to-top, 1s, 1.6s);
                 }
             }
             &__image{
@@ -223,31 +252,42 @@ body{
         }
         .about{
             &__image{
-                position: relative;
                 margin-bottom: $marginTwo;
-                img{
-                    width: 80%;
-                    z-index: 2;
-                    border: 0.5rem solid black;
+                &__wrapper{
+                    position: relative;
+                    max-width: 600px;
+                    margin: auto;
+
+                    img{
+                        width: 80%;
+                        z-index: 2;
+                        border: 0.5rem solid black;
+                    }
+                    &::before{
+                        position: absolute;
+                        z-index: -1;
+                        display: block;
+                        content: '';
+                        width:80%;
+                        height: 80%;
+                        background-color: $diffColor;
+                        transform: translate(4%, -6%);
+                    }
                 }
-                &::before{
-                    position: absolute;
-                    z-index: -1;
-                    display: block;
-                    content: '';
-                    width:80%;
-                    height: 80%;
-                    background-color: $diffColor;
-                    transform: translate(4%, -6%);
-                }
+                
             }
             &__text{
                 p{
-                    width:80%;
+                    width:75%;
                     margin: auto;
                     margin-bottom: $marginTwo;
+
                     &:last-of-type{
                         margin-bottom: 3rem;
+                    }
+
+                    @media (min-width: $tablet) {
+                    width: 60%;
                     }
                 }
                 a{
@@ -262,6 +302,7 @@ body{
             flex-wrap: wrap;
             .project{
                 width: 80%;
+                max-width: 300px;
                 min-height: 40vh;
                 margin:auto;
                 margin-bottom: 3rem;
@@ -271,7 +312,7 @@ body{
                 align-items: center;
                 position: relative;
                 overflow: hidden;
-
+                
                 &::before{
                     content: '';
                     position: absolute;
@@ -366,10 +407,15 @@ body{
                 justify-content: center;
                 align-items: center;
                 width: 80%;
+                max-width: 500px;
                 margin-bottom: $marginTwo;
                 border-radius: 0.5rem;
                 box-shadow: 0 1rem 2rem #000;
                 background-image: linear-gradient($diffColor,$diffColor);  background-size: 0% 10px;  background-repeat: no-repeat;  transition: background-size 0.5s;  background-position: 0 100%;
+
+                @media (min-width: $tablet) {
+                    width: 50%;                    
+                }
 
                 &:hover{
                     background-size: 100% 10px;
@@ -387,6 +433,9 @@ body{
             }
         }
         .workflow{
+            @media (min-width: $desktop) {
+                display: none;
+            }
             &__wrapper{
                 display: flex;
                 flex-direction: column;
@@ -395,6 +444,7 @@ body{
                 margin: auto;
                 margin-bottom: $marginTwo;
                 width: 75%;
+                max-width: 300px;
                 text-align: left;
                 border-radius: 0.5rem;
                 box-shadow: 0 1rem 2rem #000;
@@ -416,17 +466,78 @@ body{
             }
     
         }
+        .workflow_carousel{
+            @media (max-width: 1023px) {
+                display: none;
+            }
+            .container {
+                position: relative;
+                height: 300px;
+                width: 320px;
+                margin: 7rem auto 0 auto;
+                perspective: 1600px;
+
+                &__carousel{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    transform-style: preserve-3d;
+                    animation: rotate 30s infinite forwards linear;
+
+                    &__face {
+                        position: absolute;
+                        width: 300px;
+                        height: 187px;
+                        background: #222;
+                        border-radius: 0.5rem;
+                        box-shadow: 0 1rem 2rem #000;
+                        display: flex;
+                        flex-direction: column;
+                        p{
+                            margin-inline: 1rem;
+                        }
+                        i{
+                            margin-top: 1rem;
+                        }
+                        &:hover{
+                            box-shadow: 0 0.5rem 1rem #000;
+                        }
+                        &:nth-child(1) {
+                            transform: rotateY(0deg) translateZ(300px)}
+                        &:nth-child(2) {
+                            transform: rotateY(60deg) translateZ(300px)}
+                        &:nth-child(3) {
+                            transform: rotateY(120deg) translateZ(300px)}
+                        &:nth-child(4) {
+                            transform: rotateY(180deg) translateZ(300px)}
+                        &:nth-child(5) {
+                            transform: rotateY(240deg) translateZ(300px)}
+                        &:nth-child(6) {
+                            transform: rotateY(300deg) translateZ(300px)}
+                      }
+                }
+            }
+        }
         .contact{
             display: flex;
             flex-direction: column;
             align-items: center;
             p{
                 width: 80%;
+                max-width: 500px;
+                @media (min-width: $tablet) {
+                    width: 50%;
+                    
+                }
             }
 
             &__form{
                 width: 80%;
-                input{
+                max-width: 500px;
+                @media (min-width: $tablet) {
+                    width: 50%;                    
+                }
+                input, textarea{
                     width: 100%;
                     border: 1px solid #fff;
                     border-radius: 3rem;
@@ -443,6 +554,9 @@ body{
                         margin-top: $marginTwo;
                     }
                 }
+                textarea{
+                    border-radius: 1rem;
+                }
             }
             button{
                 @include btn;
@@ -452,6 +566,12 @@ body{
         }
     }
     footer{
+        @media (min-width: $tablet) {
+            width: 50%;
+            max-width: 500px;
+            margin: auto;
+        }
+
         margin-bottom: $marginTwo;
         .socials{
             display: flex;
@@ -561,3 +681,13 @@ body{
       opacity: 1;
     }
 }
+@keyframes rotate {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(-360deg);
+    }
+}
+  
+  

@@ -40,10 +40,6 @@
                 <p>I'm design minded frond end developer with UI/UX skills</p>
                 <button id="about">Hire Me</button>
             </div>
-            <div class="hero__image none">
-                <!-- Image faded on half face -->
-                <img src="" alt="Hero Image">
-            </div>
         </section>
         <div class="flex_line slide-right js-scroll">
             <span class="line"></span>
@@ -52,7 +48,9 @@
         </div>
         <section class="about">
             <div class="about__image fade-in-bottom js-scroll">
-                <img src="/assets/hero_photo.png" alt="My photo">
+                <div class="about__image__wrapper">
+                    <img src="/assets/hero_photo.png" alt="My photo">
+                </div>
             </div>
             <div class="about__text fade-in js-scroll">
                 <h2 class="fade-in js-scroll">About Me</h2>
@@ -102,46 +100,94 @@
             <span class="line"></span>
         </div>
         <section class="workflow">
-            <!-- Workflow carousel would be nice here -->
             <h2 class="fade-in js-scroll">My Workflow</h2>
             <div class="workflow__wrapper">
                 <div class="workflow__item slide-left js-scroll">
+                    <div class="one">
+                        <i class='bx bx-lg bx-bulb'></i>
+                        <h3>Idea</h3>
+                        <p>Define objectives and target audiences.</p>
+                    </div>
+                </div>
+                <div class="workflow__item slide-right js-scroll">
+                    <div class="two">
+                        <i class='bx bx-lg bx-search' ></i>
+                        <h3>Research</h3>
+                        <p>Find information about the idea and objectives.</p>
+                    </div>
+                </div>
+                <div class="workflow__item slide-left js-scroll">
+                    <div class="three">
+                        <i class='bx bx-lg bx-list-check' ></i>
+                        <h3>Planning</h3>
+                        <p>Plan the site structure of website or web application.</p>
+                    </div>
+                </div>
+                <div class="workflow__item slide-right js-scroll">
+                    <div class="four">
+                        <i class='bx bx-lg bx-edit' ></i>
+                        <h3>Designing</h3>
+                        <p>Create sketch of content elements with initial review.</p>
+                    </div>
+                </div>
+                <div class="workflow__item slide-left js-scroll">
+                    <div class="five">
+                        <i class='bx bx-lg bx-bug' ></i>
+                        <h3>Testing</h3>
+                        <p>Checking the project on various browsers and devices.</p>
+                    </div>
+                </div>
+                <div class="workflow__item slide-right js-scroll">
+                    <div class="six">
+                        <i class='bx bx-lg bx-rocket' ></i>
+                        <h3>Launch</h3>
+                        <p id="contact">Ready product land on hosting and wait for futher improvements.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="workflow_carousel">
+            <h2 class="fade-in js-scroll">My Workflow</h2>
+            <div class="container">
+                <div class="container__carousel">
+                  <div class="container__carousel__face">
                     <i class='bx bx-lg bx-bulb'></i>
                     <h3>Idea</h3>
                     <p>Define objectives and target audiences.</p>
                 </div>
-                <div class="workflow__item slide-right js-scroll">
+                <div class="container__carousel__face">
                     <i class='bx bx-lg bx-search' ></i>
                     <h3>Research</h3>
                     <p>Find information about the idea and objectives.</p>
                 </div>
-                <div class="workflow__item slide-left js-scroll">
+                <div class="container__carousel__face">
                     <i class='bx bx-lg bx-list-check' ></i>
                     <h3>Planning</h3>
-                    <p>Plan the site structure of website or web application.</p>
+                    <p>Plan the site structure of website or web application.
                 </div>
-                <div class="workflow__item slide-right js-scroll">
+                <div class="container__carousel__face">
                     <i class='bx bx-lg bx-edit' ></i>
                     <h3>Designing</h3>
-                    <p>Create sketch of content elements with initial review.</p>
+                    <p>Create sketch of content elements with initial review.
                 </div>
-                <div class="workflow__item slide-left js-scroll">
+                  <div class="container__carousel__face">
                     <i class='bx bx-lg bx-bug' ></i>
                     <h3>Testing</h3>
-                    <p>Checking the project on various browsers and devices.</p>
+                    <p>Checking the project on various browsers and devices.
                 </div>
-                <div class="workflow__item slide-right js-scroll">
+                <div class="container__carousel__face">
                     <i class='bx bx-lg bx-rocket' ></i>
                     <h3>Launch</h3>
-                    <p id="contact">Ready product land on hosting and wait for futher improvements.</p>
+                    <p id="contact">Ready product land on hosting and wait for futher improvements.
                 </div>
-            </div>
+                </div>
+              </div>
         </section>
         <div class="flex_line slide-right js-scroll">
             <span class="line"></span>
             <h3>Contact Me</h3>
             <span class="line"></span>
-        </div>
+        </div>       
         <section class="contact">
             <h2 class="fade-in js-scroll">Get In Touch</h2>
             <p class="fade-in-bottom js-scroll"> I am available to work with your projects, give me a shout and I'll get back to you as soon as I can</p>
@@ -150,7 +196,7 @@
                 <input type="Name" name="Name" placeholder="*Full name" required>
                 <input type="email" name="email" placeholder="*Email" required>
                 <input type="number" name="Phone_Number" placeholder="Phone number">
-                <input type="textbox" name="Message" placeholder="*Message" required>
+                <textarea rows="5" name="Message" placeholder="*Message" required></textarea>
             </div>
             <button class="fade-in js-scroll">Submit</button>
         </section>
