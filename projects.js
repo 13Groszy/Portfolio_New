@@ -1,7 +1,7 @@
 export {projects as default};
 
 const beaver = {
-    title: 'Hit The Beaver Game',
+    title: 'Hit The Beaver',
     key: 'beaver',
     design: 'https://hit-the-beaver.netlify.app',
     code: 'https://github.com/13Groszy/Hit_The_Beaver',
