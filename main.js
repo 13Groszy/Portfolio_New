@@ -67,3 +67,45 @@ scrollElements.forEach((el) => {
   window.addEventListener('scroll', () => {
     handleScrollAnimation();
   })
+
+
+  //Sending email:1
+  //selectors:
+
+  const contact_btn = document.querySelector('.contact__button');
+  const contact_form = document.querySelector('form');
+  let form_values = {
+    name:'',
+    email:'',
+    phone:'',
+    message:''
+  };
+
+  const sendEmail = () => {
+      form_values.name = contact_form[0].value;
+      form_values.email = contact_form[1].value;
+      form_values.phone = contact_form[2].value;
+      form_values.message = contact_form[3].value;
+
+      emailjs.send('service_qmp3n2l', 'template_ky9magz', form_values)
+    .then(function(response) {
+       console.log(response.status, response.text);
+       contact_form.reset();
+       showPopup();
+    }, function(error) {
+       console.log(error);
+    });
+}
+window.sendEmail = sendEmail;
+
+
+//Popup
+const popup = document.querySelector('.popup');
+const clearPopup = () =>{
+  popup.classList.remove('active')
+}
+
+let showPopup = () =>{
+popup.classList.add('active');
+const removePopup = setTimeout(clearPopup, 3000);
+}

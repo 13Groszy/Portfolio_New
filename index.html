@@ -38,7 +38,7 @@
                 <h1>Mateusz Daszkiewicz</h1>
                 <h2>Junior Frontend Developer</h2>
                 <p>I'm design minded frond end developer with UI/UX skills</p>
-                <button id="about">Hire Me</button>
+                <a href="#contact" id="about">Hire Me</a>
             </div>
         </section>
         <div class="flex_line slide-right js-scroll">
@@ -57,7 +57,6 @@
                 <p class="fade-in-bottom js-scroll">I'm Mateusz, self-taught Junior Front End Developer with UI/UX skills. <br>I'm passionate about continuous development of my stack, challenging problems and expanding experiences.</p>
                 <p class="fade-in-bottom js-scroll">My actual stack is HTML, CSS and JavaScript with few extra libraries and frameworks like SCSS, TailwindCSS, jQuery and Vue.js. <br> I also have some experience with WordPress, Figma and PhotoShop</p>
                 <p class="fade-in-bottom js-scroll">Although I don't have much commercial experience, I allocate most of my free time to achieve it.</p>
-                <a class="fade-in js-scroll" id="portfolio" href="#" Download>Download CV</a>
             </div>
         </section>
         <div class="flex_line slide-right js-scroll">
@@ -68,7 +67,7 @@
         <h2 class="fade-in js-scroll">My Portfolio</h2>
         <section class="portfolio">
         </section>
-        <div class="flex_line slide-right js-scroll">
+        <div class="flex_line slide-right js-scroll" id="services">
             <span class="line"></span>
             <h3>What I do?</h3>
             <span class="line"></span>
@@ -78,17 +77,17 @@
             <!--Services with highlight on ::hover -->
             <div class="services__wrapper">
                 <div class="services__item fade-in-bottom js-scroll">
-                    <img src="/assets/logo.png" alt="">
+                    <i class='bx bx-laptop'></i>
                     <h3>Website Development</h3>
                     <p>I use various web technologies to transfer customer ideas to code which conver to responsive websites.</p>
                 </div>
                 <div class="services__item fade-in-bottom js-scroll">
-                    <img src="/assets/logo.png" alt="">
+                    <i class='bx bxs-edit'></i>
                     <h3>Product Design</h3>
                     <p>I work with certain tools to create high quality designs which are simple to use and to please the eye.</p>
                 </div>
                 <div class="services__item fade-in-bottom js-scroll">
-                    <img src="/assets/logo.png" alt="">
+                    <i class='bx bx-money-withdraw'></i>
                     <h3>Creating NFT</h3>
                     <p>I keep up with the times and created original tool which make unique tokens.</p>
                 </div>
@@ -141,7 +140,7 @@
                     <div class="six">
                         <i class='bx bx-lg bx-rocket' ></i>
                         <h3>Launch</h3>
-                        <p id="contact">Ready product land on hosting and wait for futher improvements.</p>
+                        <p>Ready product land on hosting and wait for futher improvements.</p>
                     </div>
                 </div>
             </div>
@@ -178,12 +177,12 @@
                 <div class="container__carousel__face">
                     <i class='bx bx-lg bx-rocket' ></i>
                     <h3>Launch</h3>
-                    <p id="contact">Ready product land on hosting and wait for futher improvements.
+                    <p>Ready product land on hosting and wait for futher improvements.
                 </div>
                 </div>
               </div>
         </section>
-        <div class="flex_line slide-right js-scroll">
+        <div class="flex_line slide-right js-scroll"  id="contact">
             <span class="line"></span>
             <h3>Contact Me</h3>
             <span class="line"></span>
@@ -192,17 +191,17 @@
             <h2 class="fade-in js-scroll">Get In Touch</h2>
             <p class="fade-in-bottom js-scroll"> I am available to work with your projects, give me a shout and I'll get back to you as soon as I can</p>
 
-            <div class="contact__form fade-in-bottom js-scroll">
+            <form class="contact__form fade-in-bottom js-scroll">
                 <input type="Name" name="Name" placeholder="*Full name" required>
                 <input type="email" name="email" placeholder="*Email" required>
                 <input type="number" name="Phone_Number" placeholder="Phone number">
                 <textarea rows="5" name="Message" placeholder="*Message" required></textarea>
-            </div>
-            <button class="fade-in js-scroll">Submit</button>
+            </form>
+            <button onclick="sendEmail()" class="fade-in js- contact__button">Submit</button>
         </section>
     </main>
     <footer class="fade-in js-scroll">
-        <img src="/assets/logo.png" alt="Logo">
+        <a href="#"><img src="/assets/logo.png" alt="Logo"></a>
         <div class="socials">
             <a href="mailto:topdrive940@gmail.com" target="_blank"><i class='bx bx-border-circle bxl-gmail'></i></a>
             <a href="https://github.com/13Groszy" target="_blank"><i class='bx bx-border-circle bxl-github'></i></a>
@@ -212,10 +211,20 @@
         <p>Created by Mateusz Daszkiewicz with HTML, SCSS and JavaScript.</p>
     </footer>
     <div class="page_extras">
+        <div class="popup">
+            <p>Thanks for your email!</p>
+            <p>I will reply as soon as I can.</p>
+        </div>
         <div class="overlay_one"></div>
-        <div class="overlay_two"></div>
+        <div class="overlay_two"></div>        
     </div>
     <script src="public/app.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("user_kjcnyN76EcurTGKooXXyo");
+   })();
+</script>
 </body>
 </html>
