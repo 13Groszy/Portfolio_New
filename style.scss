@@ -232,8 +232,9 @@ body{
                     opacity: 0;
                     @include animation(appear-to-top, 1s, 1.4s);
                 }
-                button{
+                a{
                     @include btn;
+                    text-decoration: none;
                     opacity: 0;
                     @include animation(appear-to-top, 1s, 1.8s);
                 }
@@ -245,9 +246,6 @@ body{
                     opacity: 0;
                     @include animation(appear-to-top, 1s, 1.6s);
                 }
-            }
-            &__image{
-    
             }
         }
         .about{
@@ -290,11 +288,6 @@ body{
                     width: 60%;
                     }
                 }
-                a{
-                    @include btn;
-                    text-decoration: none;
-                }
-
             }
         }
         .portfolio{
@@ -414,21 +407,21 @@ body{
                 background-image: linear-gradient($diffColor,$diffColor);  background-size: 0% 10px;  background-repeat: no-repeat;  transition: background-size 0.5s;  background-position: 0 100%;
 
                 @media (min-width: $tablet) {
-                    width: 50%;                    
+                    width: 50%;
                 }
 
                 &:hover{
                     background-size: 100% 10px;
                 }
 
-                img{
-                    width: 30%;
-                    margin-bottom: 1rem;
+                i{
+                    margin-block: 1rem;
+                    font-size: 5rem;
                 }
 
                 p{
                     width: 80%;
-                    margin-bottom: $marginTwo;                    
+                    margin-bottom: $marginTwo;
                 }
             }
         }
@@ -527,7 +520,6 @@ body{
                 max-width: 500px;
                 @media (min-width: $tablet) {
                     width: 50%;
-                    
                 }
             }
 
@@ -535,7 +527,7 @@ body{
                 width: 80%;
                 max-width: 500px;
                 @media (min-width: $tablet) {
-                    width: 50%;                    
+                    width: 50%;
                 }
                 input, textarea{
                     width: 100%;
@@ -566,13 +558,8 @@ body{
         }
     }
     footer{
-        @media (min-width: $tablet) {
-            width: 50%;
-            max-width: 500px;
-            margin: auto;
-        }
-
-        margin-bottom: $marginTwo;
+        padding-bottom: $marginTwo;
+        
         .socials{
             display: flex;
             justify-content: space-around;
@@ -598,6 +585,23 @@ body{
             @include overlays(leave-right, 0.5s);
             left:50vw;
         }
+        .popup{
+            position: fixed;
+            background-color: $diffColor;
+            box-shadow: 0 1rem 1rem #000;
+            border-radius: 0.5rem 0.5rem 0 0;
+            bottom: -5rem;
+            transform: translateX(calc(50vw - 6rem));
+            height: 4rem;
+            width: 12rem;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            transition: all 500ms ease-in;
+        }
+        .active{
+            bottom: 0;
+            }
     }
 }
 

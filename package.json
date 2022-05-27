@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@emailjs/browser": "^3.6.2",
     "webpack": "^5.72.1"
   },
   "devDependencies": {
