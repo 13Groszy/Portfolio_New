@@ -49,8 +49,15 @@ const photoLanding = {
     code:"#",
     description:"Template project for a photographer. Website is fully responsive and have contact form.",
 }
+const chromeExtension = {
+    title:"Chrome Extension",
+    key:"chromeextension",
+    design:'#',
+    code:"#",
+    description:"Simple chrome extension which reminds user to stretch their body if they do office work.",
+}
 
-const projects = [beaver, rockpaper, hotelApp, palindromeChecker, fyloLanding, weatherApp, photoLanding];
+const projects = [beaver, rockpaper, hotelApp, palindromeChecker, fyloLanding, weatherApp, photoLanding, chromeExtension];
 
 // const template = {
 //     title:"",
