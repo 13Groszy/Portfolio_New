@@ -81,7 +81,7 @@ body{
         justify-content: center;
         align-items: center;
         h3{
-            margin-bottom: 0;
+            margin-bottom: 2rem;
         }
         .line{
             width:2.5rem;
@@ -92,6 +92,12 @@ body{
             margin-inline: 1rem;
         }
         margin-bottom: $marginTwo;
+    }
+    canvas{
+        filter: blur(1px);
+        position: fixed;
+        left: 0;
+        top: 0;
     }
     header{
         position: fixed;
@@ -323,37 +329,42 @@ body{
                 }
                 &.beaver{
                     &::after{
-                        @include card(url('/assets/beaver.png'))
+                        @include card(url('../assets/beaver.png'))
                     }
                 }
                 &.rockpaper{
                     &::after{
-                            @include card(url('/assets/rockpaper.png'))
+                            @include card(url('../assets/rockpaper.png'))
                     }
                 }
                 &.hotelapp{
                     &::after{
-                        @include card(url('/assets/hotelapp.png'))
+                        @include card(url('../assets/hotelapp.png'))
                     }
                 }
                 &.palindrome{
                     &::after{
-                        @include card(url('/assets/palindromechecker.png'))
+                        @include card(url('../assets/palindromechecker.png'))
                     }
                 }
                 &.photolanding{
                     &::after{
-                        @include card(url('/assets/photolanding.png'))
+                        @include card(url('../assets/photolanding.png'))
                     }
                 }
                 &.fylolanding{
                     &::after{
-                        @include card(url('/assets/fylolanding.png'))
+                        @include card(url('../assets/fylolanding.png'))
                     }
                 }
                 &.weatherapp{
                     &::after{
-                        @include card(url('/assets/weatherapp.png'))
+                        @include card(url('../assets/weatherapp.png'))
+                    }
+                }
+                &.chromeextension{
+                    &::after{
+                        @include card(url('../assets/chromeextension.png'))
                     }
                 }
 
@@ -574,6 +585,9 @@ body{
         img{
             height: 5rem;
             margin-bottom: 1rem;
+        }
+        p{
+            margin-top: 2rem;
         }
     }
     .page_extras{
