@@ -53,7 +53,7 @@ const chromeExtension = {
     title:"Chrome Extension",
     key:"chromeextension",
     design:'#',
-    code:"#",
+    code:"https://github.com/13Groszy/chrome_extension",
     description:"Simple chrome extension which reminds user to stretch their body if they do office work.",
 }
 
